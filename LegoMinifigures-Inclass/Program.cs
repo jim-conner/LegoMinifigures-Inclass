@@ -1,5 +1,5 @@
 ﻿using LegoMinifigures_Inclass.Heads;
-using System;
+using LegoMinifigures_Inclass.Torsos;
 using System.Collections.Generic;
 
 namespace LegoMinifigures_Inclass
@@ -18,13 +18,31 @@ namespace LegoMinifigures_Inclass
 
             var astronautHead = new AstronautHead();
 
-            var heads = new List<HeadBase>() { astronautHead, batmanHead, workerHead};
+            var heads = new List<HeadBase>() { astronautHead, batmanHead, workerHead };
 
             foreach (var head in heads)
             {
                 head.SayHowdy();
                 head.Spin();
             }
+
+            var batmanTorso = new BatSuitTorso();
+            batmanTorso.Color = LegoColor.Green;
+            batmanTorso.HasBatBoomerang = true;
+            batmanTorso.HasShirt = false;
+            batmanTorso.Donates();
+
+            var cowboyTorso = new CowboyTorso();
+
+            var sumoTorso = new SumoTorso();
+
+            var torsos = new List<TorsoBase>() { batmanTorso, batmanTorso, sumoTorso };
+            foreach (var torso in torsos)
+            {
+                torso.Greeting();
+                torso.Wiggle();
+            }
+
         }
     }
 }
