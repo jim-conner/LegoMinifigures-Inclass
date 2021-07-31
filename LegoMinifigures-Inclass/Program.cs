@@ -1,5 +1,8 @@
 ﻿using LegoMinifigures_Inclass.Heads;
+using LegoMinifigures_Inclass.Legs;
+using LegoMinifigures_Inclass.MiniFigures;
 using LegoMinifigures_Inclass.Torsos;
+using System;
 using System.Collections.Generic;
 
 namespace LegoMinifigures_Inclass
@@ -43,6 +46,33 @@ namespace LegoMinifigures_Inclass
                 torso.Wiggle();
             }
 
+            var seaLeg = new SeaLeg();
+            seaLeg.AreWobbly = true;
+            seaLeg.Bottoms = Bottoms.None;
+            seaLeg.NumberOfLegs = 3;
+            //seaLeg.Shoes = Shoes.ShellToedAdidas;
+
+            var magicLeg = new MagicLeg();
+            magicLeg.Bottoms = Bottoms.Chaps;
+            magicLeg.HasInvisibleLegs = true;
+            magicLeg.MeasureLegs("small");
+            Console.WriteLine($"Magic legs have a length of {magicLeg.Length}.");
+
+            var legs = new List<LegBase>() { magicLeg, seaLeg };
+
+            foreach (var leg in legs)
+            {
+                leg.Dance();
+                leg.Walk();
+            }
+
+            Console.WriteLine("Before Bob.");
+
+            var bob = new MiniFigure(workerHead, cowboyTorso, seaLeg ); //creating new type of SeaLeg
+            bob.BuildIt();
+            
+            Console.WriteLine("You just Bob do his thing!");
+            Console.ReadLine();
         }
     }
 }

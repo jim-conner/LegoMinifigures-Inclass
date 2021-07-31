@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace LegoMinifigures_Inclass.Legs
 {
-    public class BottomsType
-    {
         enum Bottoms
         {
             None,
             Chaps,
             Leggings
         }
-    }
 }

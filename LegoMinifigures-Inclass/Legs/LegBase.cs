@@ -8,8 +8,8 @@ namespace LegoMinifigures_Inclass.Legs
 {
     abstract class LegBase //dont' forget -> abstract lets us do inheritance
     {
-        public BottomsType Bottoms { get; set; }
-        public ShoesType Kicks { get; set; }
+        public Bottoms Bottoms { get; set; }
+        public Shoes Kicks { get; set; }
 
         public virtual void Dance()
         {

@@ -17,9 +17,11 @@ namespace LegoMinifigures_Inclass.Heads
             Console.WriteLine("What is up.");
         }
 
+        // abstrqact is forcing inherited classes to have this behavior
         // below i am saying every class that inherits from abstract headbase must 
         // have a method that looks like this... I'm not saying what it should DO 
         // I don't know what the behavior is, but I know it looks like this
         public abstract void Spin();
+        // whatever uses it must override it's method
     }
 }
